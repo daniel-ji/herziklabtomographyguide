@@ -3,12 +3,12 @@ name: Convert Notebook to HTML and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch like 'master'
+      - main
 
 permissions:
-  contents: write # Needed to commit the generated HTML file
-  pages: write    # Needed to deploy to GitHub Pages
-  id-token: write # Needed for OIDC authentication with GitHub Pages
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -43,7 +43,7 @@ jobs:
       uses: actions/configure-pages@v5
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v3
       with:
         path: './' # Upload the current directory, which now contains index.html
 
