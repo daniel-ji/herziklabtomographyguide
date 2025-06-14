@@ -7522,11 +7522,12 @@ a.anchor-link {
 <p>Made with joy by Daniel, with the guidance and great help of Brian and Sarah!</p>
 <h4 id="Outline">Outline<a class="anchor-link" href="#Outline">¶</a></h4><ol>
 <li><a href="#Installation">Installation</a>*</li>
-<li><a href="#Running-AreTomo3-(motion-correction,-alignment,-3D-reconstruction">AreTomo3</a>)**</li>
-<li><a href="#Running-pytom-match-pick-(template-based-particle-picking">Pytom Template &amp; Mask Creation</a>)*</li>
-<li><a href="#Running-batch_pytom_aretomo3-(intermediary-to-run-pytom-on-AreTomo3-output">batch_pytom_aretomo3</a>)*</li>
+<li><a href="#Running-AreTomo3-motion-correction,-alignment,-3D-reconstruction">AreTomo3</a>**</li>
+<li><a href="#Running-pytom-match-pick:-template-based-particle-picking">Pytom Template &amp; Mask Creation</a>*</li>
+<li><a href="#Running-batch_pytom_aretomo3:-intermediary-to-run-pytom-on-AreTomo3-output">batch_pytom_aretomo3</a>*</li>
 <li><a href="#Running-pytom-match-pick:-template-matching-&amp;-particle-extraction">Pytom Template Picking</a>**</li>
 <li><a href="#Visualizing-Picks">Visualization</a>*</li>
+<li><a href="#Further-Filtering-Picks">Further Filtering Picks</a>*</li>
 <li><a href="#Appendix">Appendix</a></li>
 </ol>
 <p><sub>*Mostly manual work done by the user</sub><br/>
@@ -7590,7 +7591,7 @@ Generate template from MRC density. -- Marten Chaillet (@McHaillet)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Running-the-Pipeline">Running the Pipeline<a class="anchor-link" href="#Running-the-Pipeline">¶</a></h1><h2 id="Running-AreTomo3-(motion-correction,-alignment,-3D-reconstruction)">Running AreTomo3 (motion correction, alignment, 3D reconstruction)<a class="anchor-link" href="#Running-AreTomo3-(motion-correction,-alignment,-3D-reconstruction)">¶</a></h2><p><strong>For convenience, the help page on AreTomo3 is in the appendix <a href="#AreTomo3-Full-Options">here</a>.</strong></p>
+<h1 id="Running-the-Pipeline">Running the Pipeline<a class="anchor-link" href="#Running-the-Pipeline">¶</a></h1><h2 id="Running-AreTomo3---motion-correction,-alignment,-3D-reconstruction">Running AreTomo3 - motion correction, alignment, 3D reconstruction<a class="anchor-link" href="#Running-AreTomo3---motion-correction,-alignment,-3D-reconstruction">¶</a></h2><p><strong>For convenience, the help page on AreTomo3 is in the appendix <a href="#AreTomo3-Full-Options">here</a>.</strong></p>
 <h3 id="Creating-the-submit-script-(modify-accordingly-and-then-save-&amp;-submit-on-hooke)">Creating the submit script (modify accordingly and then save &amp; submit on hooke)<a class="anchor-link" href="#Creating-the-submit-script-(modify-accordingly-and-then-save-&amp;-submit-on-hooke)">¶</a></h3><p>After edits are made to the submit script below, feel free to save the SLURM submit script to hooke and run it, e.g:</p>
 <pre><code>touch my_aretomo3_submit_script.sh
 nano my_aretomo3_submit_script.sh [a live terminal editor will open, you can ctrl-v your copied submit script; and then to write to the file, ctrl-o, "y" and enter, ctrl-x (or just ctrl-x if you don't want to save your changes]
@@ -7672,7 +7673,7 @@ AreTomo3 \
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Running-pytom-match-pick-(template-based-particle-picking)">Running pytom-match-pick (template-based particle picking)<a class="anchor-link" href="#Running-pytom-match-pick-(template-based-particle-picking)">¶</a></h2>
+<h2 id="Running-pytom-match-pick:-template-based-particle-picking">Running pytom-match-pick: template-based particle picking<a class="anchor-link" href="#Running-pytom-match-pick:-template-based-particle-picking">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7738,7 +7739,7 @@ conda activate pytom_tm
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Running-batch_pytom_aretomo3-(intermediary-to-run-pytom-on-AreTomo3-output)">Running batch_pytom_aretomo3 (intermediary to run pytom on AreTomo3 output)<a class="anchor-link" href="#Running-batch_pytom_aretomo3-(intermediary-to-run-pytom-on-AreTomo3-output)">¶</a></h2><p>For convenience, the help page on batch_pytom_aretomo3 is in the appendix <a href="#batch_pytom_aretomo3-Full-Options">here</a>. The official repo with a guide can be found here: <a href="https://github.com/Phaips/batch_pytom_aretomo3">https://github.com/Phaips/batch_pytom_aretomo3</a>.</p>
+<h2 id="Running-batch_pytom_aretomo3:-intermediary-to-run-pytom-on-AreTomo3-output">Running batch_pytom_aretomo3: intermediary to run pytom on AreTomo3 output<a class="anchor-link" href="#Running-batch_pytom_aretomo3:-intermediary-to-run-pytom-on-AreTomo3-output">¶</a></h2><p>For convenience, the help page on batch_pytom_aretomo3 is in the appendix <a href="#batch_pytom_aretomo3-Full-Options">here</a>. The official repo with a guide can be found here: <a href="https://github.com/Phaips/batch_pytom_aretomo3">https://github.com/Phaips/batch_pytom_aretomo3</a>.</p>
 <h3 id="Note-that-some-things-are-manually-set-in-the-pytom-template-submit-script-following-this,-so-some-values-set-in-this-batch_pytom_aretomo3.py-may-not-be-reflected-and-the-corresponding-parameter-updates-should-be-done-in-the-following-submit-script.">Note that some things are manually set in the pytom template submit script following this, so some values set in this batch_pytom_aretomo3.py may not be reflected and the corresponding parameter updates should be done in the following submit script.<a class="anchor-link" href="#Note-that-some-things-are-manually-set-in-the-pytom-template-submit-script-following-this,-so-some-values-set-in-this-batch_pytom_aretomo3.py-may-not-be-reflected-and-the-corresponding-parameter-updates-should-be-done-in-the-following-submit-script.">¶</a></h3><p>Preparing AreTomo3 output to be PyTom template picking compatabile can be without a submit script, just make sure you've already run:</p>
 <pre><code>ssh gpu-11
 module load cuda/11.2
@@ -7915,6 +7916,19 @@ python /home/daji/detergent_cocktail/RlnToArtiaX.py --input "${PARTICLES_STAR_FI
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Visualizing-in-ArtiaX-(https://github.com/FrangakisLab/ArtiaX)">Visualizing in ArtiaX (<a href="https://github.com/FrangakisLab/ArtiaX">https://github.com/FrangakisLab/ArtiaX</a>)<a class="anchor-link" href="#Visualizing-in-ArtiaX-(https://github.com/FrangakisLab/ArtiaX)">¶</a></h3><p>ChimeraX &gt;= 1.3 is needed to install ArtiaX. Installation instructions can be found here: <a href="https://github.com/FrangakisLab/ArtiaX?tab=readme-ov-file#using-the-chimerax-toolshed">https://github.com/FrangakisLab/ArtiaX?tab=readme-ov-file#using-the-chimerax-toolshed</a></p>
 <p>After running the submit script from above, you should have a <code>*_ArtiaX.star</code> file in your specified output directory that you can load into ArtiaX with your tomogram.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5891154">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Further-Filtering-Picks">Further Filtering Picks<a class="anchor-link" href="#Further-Filtering-Picks">¶</a></h2><p>Running the <code>pytom_extract_candidates.py</code> command above will give you a set of picks, but you may want to filter them further and not have to run the command again (it takes a while). Especially if you have a large number of picks and already have the <code>.star</code> file and have done the visualization to determine what threshold you want to further filter at, you can just run the following command:</p>
+<pre><code>python /home/daji/tomography/filter_pytom_picks.py --input my_input/star/file.star --output my_output/star/file_filtered.star --threshold 0.35 (or whatever threshold here)
+</code></pre>
 </div>
 </div>
 </div>
